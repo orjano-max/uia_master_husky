@@ -5,6 +5,7 @@ ekf_node:
     world_frame: odom
 
     two_d_mode: true
+    publish_tf: false
 
     frequency: 50.0
 
