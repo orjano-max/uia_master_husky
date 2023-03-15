@@ -10,7 +10,7 @@ def generate_launch_description():
     )
 
     filepath_config_interactive_markers = PathJoinSubstitution(
-        [FindPackageShare('husky_control'), 'params', 'teleop_interactive_markers.yaml']
+        [FindPackageShare('husky_control'), 'config', 'teleop_interactive_markers.yaml']
     )
 
 

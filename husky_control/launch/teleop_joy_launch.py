@@ -9,7 +9,7 @@ def generate_launch_description():
 
 
     filepath_config_joy = PathJoinSubstitution(
-        [FindPackageShare('husky_control'), 'params', ('teleop_logitech.yaml')]
+        [FindPackageShare('husky_control'), 'config', ('teleop_logitech.yaml')]
     )
 
     node_joy = Node(
