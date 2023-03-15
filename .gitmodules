@@ -1,0 +1,3 @@
+[submodule "interactive_marker_twist_server"]
+	path = interactive_marker_twist_server
+	url = https://github.com/ros-visualization/interactive_marker_twist_server
