@@ -17,6 +17,10 @@
   <xacro:arg name="is_sim" default="false" />
   <xacro:arg name="urdf_extras" default="empty.urdf" />
 
+  <xacro:if value="$(arg is_sim)">
+    <xacro:property name="mesh_path" value="file://$(find husky_description)/meshes" />
+  </xacro:if>
+
   <!-- Included URDF/XACRO Files -->
   <xacro:include filename="$(find husky_description)/urdf/decorations.urdf.xacro" />
   <xacro:include filename="$(find husky_description)/urdf/wheel.urdf.xacro" />
@@ -48,7 +52,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://husky_description/meshes/base_link.dae" />
+          <mesh filename="${mesh_path}/base_link.dae" />
         </geometry>
       </visual>
       <collision>
