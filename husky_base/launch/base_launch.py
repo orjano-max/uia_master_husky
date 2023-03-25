@@ -10,8 +10,9 @@ import xacro
 
 
 ARGUMENTS = [
-    DeclareLaunchArgument('serial_port', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","control.yaml"],),
-                          description='Serial port to connect to the husky, defaul: "/dev/ttyUSB0"'),
+    DeclareLaunchArgument('serial_port', default_value="/dev/ttyUSB0",
+                          description='Serial port to connect to the husky.'),
+
     DeclareLaunchArgument('urdf_extras', default_value='empty.urdf',
                           description='Path to URDF extras file. In order to add stuff to the husky'),
 
