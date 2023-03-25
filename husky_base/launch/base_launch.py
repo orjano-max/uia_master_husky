@@ -10,6 +10,8 @@ import xacro
 
 
 ARGUMENTS = [
+    DeclareLaunchArgument('serial_port', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","control.yaml"],),
+                          description='Serial port to connect to the husky, defaul: "/dev/ttyUSB0"'),
     DeclareLaunchArgument('urdf_extras', default_value='empty.urdf',
                           description='Path to URDF extras file. In order to add stuff to the husky'),
 
@@ -30,6 +32,7 @@ def generate_launch_description():
     urdf_extras_path = LaunchConfiguration("urdf_extras")
     config_husky_velocity_controller = LaunchConfiguration("control_params")
     localization_params = LaunchConfiguration("localization_params")
+    serial_port = LaunchConfiguration("serial_port")
 
     # Get URDF via xacro
     robot_description_content = Command(
@@ -44,7 +47,9 @@ def generate_launch_description():
             " ",
             "prefix:=''",
             " ",
-            "urdf_extras:=",urdf_extras_path
+            "urdf_extras:=",urdf_extras_path,
+            " ",
+            "serial_port:=",serial_port
         ]
     )
     robot_description = {"robot_description": robot_description_content}

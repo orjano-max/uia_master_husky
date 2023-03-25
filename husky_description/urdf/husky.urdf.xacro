@@ -6,6 +6,8 @@
 
   <xacro:arg name="prefix" default="" />
   <xacro:arg name="gazebo_controllers" default="$(find husky_control)/config/control.yaml" />
+   <xacro:arg name="serial_port" default="/dev/ttyUSB0" />
+   
   <xacro:property name="mesh_path" value="package://husky_description/meshes" />
 
   <xacro:include filename="$(find husky_description)/urdf/husky_macro.urdf.xacro" />
