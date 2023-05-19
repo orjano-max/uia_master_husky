@@ -18,6 +18,15 @@ ARGUMENTS = [
 
     DeclareLaunchArgument('control_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","control.yaml"],),
                           description='Path to control .yaml file. In order to add for example um7(set publish tf to false)'),
+
+    DeclareLaunchArgument('urdf_extras', default_value='empty.urdf',
+                          description='Path to URDF extras file. In order to add stuff to the husky'),
+
+    DeclareLaunchArgument('localization_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","localization.yaml"],),
+                          description='Path to Localization .yaml file. In order to add for example um7(set publish tf to true)'),
+
+    DeclareLaunchArgument('control_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","control.yaml"],),
+                          description='Path to control .yaml file. In order to add for example um7(set publish tf to false)'),                          
 ]
 
 os.environ["HUSKY_TOP_PLATE_ENABLED"] = "false"
